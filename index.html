@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>3D Chess</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "./three.module.js"
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+    <!-- START SCREEN -->
+    <div id="startScreen">
+        <h1 class="title">♟ 3D Chess</h1>
+        <p style="opacity:0.75; margin-bottom:30px; font-size:18px;">
+            Play • Think • Dominate ♟️
+        </p>
+        <div class="startButtons">
+            <button id="aiBtn">Play vs Computer</button>
+            <button id="friendBtn">Play with Friend</button>
+        </div>
+    </div>
+
+    <!-- TURN UI -->
+    <div id="ui" class="hidden">
+        <p id="turnText">Turn: WHITE</p>
+
+        <div class="game-buttons">
+            <button id="restartBtn">🔄 Restart</button>
+            <button id="menuBtn">🏠 Main Menu</button>
+        </div>
+    </div>
+
+    <!-- GAME CANVAS -->
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="captured-white" class="capture-zone left"></div>
+    <div id="captured-black" class="capture-zone right"></div>
+
+    <!-- AI DIFFICULTY POPUP -->
+    <div id="aiPopup" class="popup hidden">
+        <div class="popupBox">
+            <h2>Select AI Difficulty</h2>
+            <div class="sideButtons">
+                <button id="aiEasy">🤖 Easy</button>
+                <button id="aiMedium">😈 Medium</button>
+                <button id="aiHard">🧠 Hard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIDE SELECTION -->
+    <div id="sidePopup" class="popup hidden">
+        <div class="popupBox">
+            <h2>Choose Your Side</h2>
+            <div class="sideButtons">
+                <button id="chooseWhite">♔ White King</button>
+                <button id="chooseBlack">♚ Black King</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAWN PROMOTION POPUP -->
+    <div id="promotionPopup" class="popup hidden">
+        <div class="popupBox">
+            <h2>Promote Pawn</h2>
+            <div class="sideButtons">
+                <button data-piece="queen">♛ Queen</button>
+                <button data-piece="rook">♜ Rook</button>
+                <button data-piece="bishop">♝ Bishop</button>
+                <button data-piece="knight">♞ Knight</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKMATE POPUP -->
+    <div id="checkmatePopup" class="popup hidden">
+        <div class="popupBox">
+            <h2 id="checkmateTitle">♟ Checkmate!</h2>
+            <p id="winnerText"></p>
+            <div class="sideButtons">
+                <button id="checkmateRestart">🔄 Restart</button>
+                <button id="checkmateMenu">🏠 Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
