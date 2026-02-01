@@ -95,6 +95,23 @@
 
 
     <script type="module" src="main.js"></script>
+
+    <script src="https://html5.gamemonetize.com/sdk.js"></script>
+
+    <script>
+    window.SDK_OPTIONS = {
+        gameId: "v4hmkwjgbo06412s2ac372lampe5n7a",
+        onEvent: function(event) {
+        if (event.name === "SDK_GAME_PAUSE") {
+            // pause game
+        }
+        if (event.name === "SDK_GAME_RESUME") {
+            // resume game
+        }
+        }
+    };
+    </script>
+
 </body>
 
 </html>
